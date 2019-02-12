@@ -1,0 +1,32 @@
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\FormUI.exe.config
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\FormUI.exe
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\FormUI.pdb
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\Dapper.dll
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\MySql.Data.dll
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\Google.Protobuf.dll
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\Dapper.xml
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\bin\Debug\MySql.Data.xml
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.csprojAssemblyReference.cache
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.Dashboard.resources
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.Properties.Resources.resources
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.csproj.GenerateResource.cache
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.csproj.CoreCompileInputs.cache
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.csproj.CopyComplete
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.exe
+C:\Users\Keawe\source\repos\SQLDataAccessDemo\FormUI\obj\Debug\FormUI.pdb
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.csprojAssemblyReference.cache
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.Dashboard.resources
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.Properties.Resources.resources
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.csproj.GenerateResource.cache
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.csproj.CoreCompileInputs.cache
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.exe
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.pdb
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\FormUI.exe.config
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\FormUI.exe
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\FormUI.pdb
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\Dapper.dll
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\MySql.Data.dll
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\Google.Protobuf.dll
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\Dapper.xml
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\bin\Debug\MySql.Data.xml
+C:\Users\Keawe\Desktop\Athena app\Athena_Backend\FormUI\obj\Debug\FormUI.csproj.CopyComplete
