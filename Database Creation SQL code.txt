@@ -72,6 +72,57 @@ CREATE TABLE Users (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE TheEvents (
+    TE_id int NOT NULL AUTO_INCREMENT,
+    TE_Start_Date timestamp,
+    TE_End_Date timestamp,
+    TE_Time time,
+    TE_Location varchar(255),
+    
+    PRIMARY KEY (TE_id)
+);
+
+CREATE TABLE Event_Vendors (
+    EV_id int NOT NULL AUTO_INCREMENT,
+    EV_First_Name varchar(255) NOT NULL,
+    EV_Last_Name varchar(255) NOT NULL,
+    PRIMARY KEY (EV_id)
+);
+
+CREATE TABLE Event_EventCoordinators (
+    EEC_id int NOT NULL AUTO_INCREMENT,
+    EEC_First_Name varchar(255) NOT NULL,
+    EEC_Last_Name varchar(255) NOT NULL,
+    PRIMARY KEY (EEC_id)
+);
+
+CREATE TABLE Event_Sessions  (
+    ES_id int NOT NULL AUTO_INCREMENT,
+    ES_Start_Date timestamp,
+    ES_End_Date timestamp,
+    ES_Time time,
+    ES_Location varchar(255),
+    
+    PRIMARY KEY (ES_id)
+);
+
+CREATE TABLE Session_ExpectedAttendees (
+    SEA_id int NOT NULL AUTO_INCREMENT,
+    SEA_First_Name varchar(255) NOT NULL,
+    SEA_Last_Name varchar(255) NOT NULL,
+	SEA_Role varchar(255) NOT NULL,
+    PRIMARY KEY (SEA_id)
+);
+
+CREATE TABLE Session_ActualAttendees (
+    SAA_id int NOT NULL AUTO_INCREMENT,
+    SAA_First_Name varchar(255) NOT NULL,
+    SAA_Last_Name varchar(255) NOT NULL,
+	SAA_Role varchar(255) NOT NULL,
+    PRIMARY KEY (SAA_id)
+);
+
+
 -- insert data into User table --
 INSERT INTO Users (user_name,user_password, user_role)
 VALUES ('vader','vaderpw', 'admin');
