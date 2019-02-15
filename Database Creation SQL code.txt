@@ -74,6 +74,7 @@ CREATE TABLE Users (
 
 CREATE TABLE TheEvents (
     TE_id int NOT NULL AUTO_INCREMENT,
+    TE_Name varchar(255),
     TE_Start_Date timestamp,
     TE_End_Date timestamp,
     TE_Time time,
@@ -98,6 +99,7 @@ CREATE TABLE Event_EventCoordinators (
 
 CREATE TABLE Event_Sessions  (
     ES_id int NOT NULL AUTO_INCREMENT,
+    ES_Name varchar(255),
     ES_Start_Date timestamp,
     ES_End_Date timestamp,
     ES_Time time,
