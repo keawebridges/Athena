@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <title>Student</title>
+
+    <script>
+
+
+        //$(document).ready(function () {
+        //    $('#example').DataTable({
+        //        "ajax": "https://localhost:44368/api/stu",
+        //        "columns": [
+        //            { "data": "stu_id" },
+        //            { "data": "stu_name" },
+        //            { "data": "stu_gpa" }
+        //        ]
+        //    });
+        //});
+
+
+        $(document).ready(function () {
+            $('#example').DataTable(
+                {
+                    ajax: {
+                        url: 'https://localhost:44368/api/stu',
+                        dataSrc: ''
+                    },
+                    columns: [
+                        { data: 'stu_id' },
+                        { data: 'stu_name' },
+                        { data: 'stu_gpa' }
+                    ]
+                }
+            );
+        });
+
+    </script>
+
+</head>
+<body>
+
+ 
+
+    <table id="example" class="display">
+        <thead>
+            <tr>
+                <th>STU_ID</th>
+                <th>STU_NAME</th>
+                <th>STU_GPA</th>
+            </tr>
+        </thead>
+        <!--<tbody>
+            <tr>
+                <td>2525</td>
+                <td>Joe</td>
+                <td>2.5</td>
+            </tr>
+            <tr>
+                <td>7878</td>
+                <td>Sally</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>9001</td>
+                <td>Goka</td>
+                <td>1.2</td>
+            </tr>
+            <tr>
+                <td>7777</td>
+                <td>biggest</td>
+                <td>7</td>
+            </tr>
+        </tbody>-->
+        <tfoot>
+            <tr>
+                <th>STU_ID</th>
+                <th>STU_NAME</th>
+                <th>STU_GPA</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+
+   
+</body>
+</html>
