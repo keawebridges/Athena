@@ -18,7 +18,7 @@ namespace TodoApi.Models
 {
     public class AthenaDataLayer
     {
-        string DBpath = "Server=localhost; Database=lit_db; UID=keawebridges; Password=keawebridges";
+        string DBpath = "Server=localhost; Database=lit_db; UID=root; Password=Lisabella1.";
 
         //check if File exists
         public bool fileExists(string path)
