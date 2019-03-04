@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import http from "../services/httpService";
 import config from "../config.json";
+import Pagination from "../common/pagination";
 class Events extends Component {
   state = {
-    events: []
+    events: [],
+    pageSize: 4
   };
 
   async componentDidMount() {
@@ -22,10 +24,15 @@ class Events extends Component {
 
   handleDelete = event => {};
 
+  handlePageChange = page => {
+    console.log(page);
+  };
+
   render() {
+    const { length: count } = this.state.events;
+
     return (
-      <div>
-        <h1>Events!</h1>
+      <React.Fragment>
         <table className="table">
           <thead>
             <tr>
@@ -35,12 +42,17 @@ class Events extends Component {
           <tbody>
             {this.state.events.map(event => (
               <tr key={event.id}>
-                <td>{event.tE_Name}</td>
+                <td>{event.username}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      </div>
+        <Pagination
+          itemsCount={count}
+          pageSize={this.state.pageSize}
+          onPageChange={this.handlePageChange}
+        />
+      </React.Fragment>
     );
   }
 }
