@@ -1,0 +1,142 @@
+-- create the database --
+CREATE DATABASE lit_db;
+
+/*
+	1) Execute the previous command by itself.
+    
+    2) Refresh the SCHEMAS
+    (look where the databases are on the left side of the 
+    screen, and then right above the "filter objects" textbox
+    on the far right you should see a refresh button)
+    
+    3) Double-click on the newly created database so that it
+    is the database currently in use (the name of the 
+    database should become Bold). 
+    
+    4) Execute the following commands (be sure not to
+    accidentally execute the command to create the database
+    again!):
+*/
+
+-- create tables --
+CREATE TABLE TheAdmin (
+    A_id int NOT NULL AUTO_INCREMENT,
+    A_First_Name varchar(255) NOT NULL,
+    A_Last_Name varchar(255) NOT NULL,
+    A_User_Name varchar(255) NOT NULL,
+    A_Pass_Word varchar(255) NOT NULL,
+    PRIMARY KEY (A_id)
+);
+
+CREATE TABLE EventCoordinators (
+    EC_id int NOT NULL AUTO_INCREMENT,
+    EC_First_Name varchar(255) NOT NULL,
+    EC_Last_Name varchar(255) NOT NULL,
+    EC_User_Name varchar(255) NOT NULL,
+    EC_Pass_Word varchar(255) NOT NULL,
+    PRIMARY KEY (EC_id)
+);
+
+CREATE TABLE Supervisors (
+    S_id int NOT NULL AUTO_INCREMENT,
+    S_First_Name varchar(255) NOT NULL,
+    S_Last_Name varchar(255) NOT NULL,
+    S_User_Name varchar(255) NOT NULL,
+    S_Pass_Word varchar(255) NOT NULL,
+    PRIMARY KEY (S_id)
+);
+
+CREATE TABLE Employees (
+    E_id int NOT NULL AUTO_INCREMENT,
+    E_First_Name varchar(255) NOT NULL,
+    E_Last_Name varchar(255) NOT NULL,
+    E_User_Name varchar(255) NOT NULL,
+    E_Pass_Word varchar(255) NOT NULL,
+    PRIMARY KEY (E_id)
+);
+
+CREATE TABLE Vendors (
+    V_id int NOT NULL AUTO_INCREMENT,
+    V_First_Name varchar(255) NOT NULL,
+    V_Last_Name varchar(255) NOT NULL,
+    V_User_Name varchar(255) NOT NULL,
+    V_Pass_Word varchar(255) NOT NULL,
+    PRIMARY KEY (V_id)
+);
+
+CREATE TABLE Users (
+    id int NOT NULL AUTO_INCREMENT,
+    user_name varchar(255) NOT NULL,
+    user_password varchar(255) NOT NULL,
+    user_role varchar(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE TheEvents (
+    TE_id int NOT NULL AUTO_INCREMENT,
+    TE_Name varchar(255),
+    TE_Start_Date timestamp,
+    TE_End_Date timestamp,
+    TE_Time time,
+    TE_Location varchar(255),
+    
+    PRIMARY KEY (TE_id)
+);
+
+CREATE TABLE Event_Vendors (
+    EV_id int NOT NULL AUTO_INCREMENT,
+    EV_First_Name varchar(255) NOT NULL,
+    EV_Last_Name varchar(255) NOT NULL,
+    PRIMARY KEY (EV_id)
+);
+
+CREATE TABLE Event_EventCoordinators (
+    EEC_id int NOT NULL AUTO_INCREMENT,
+    EEC_First_Name varchar(255) NOT NULL,
+    EEC_Last_Name varchar(255) NOT NULL,
+    PRIMARY KEY (EEC_id)
+);
+
+CREATE TABLE Event_Sessions  (
+    ES_id int NOT NULL AUTO_INCREMENT,
+    ES_Name varchar(255),
+    ES_Start_Date timestamp,
+    ES_End_Date timestamp,
+    ES_Time time,
+    ES_Location varchar(255),
+    
+    PRIMARY KEY (ES_id)
+);
+
+CREATE TABLE Session_ExpectedAttendees (
+    SEA_id int NOT NULL AUTO_INCREMENT,
+    SEA_First_Name varchar(255) NOT NULL,
+    SEA_Last_Name varchar(255) NOT NULL,
+	SEA_Role varchar(255) NOT NULL,
+    PRIMARY KEY (SEA_id)
+);
+
+CREATE TABLE Session_ActualAttendees (
+    SAA_id int NOT NULL AUTO_INCREMENT,
+    SAA_First_Name varchar(255) NOT NULL,
+    SAA_Last_Name varchar(255) NOT NULL,
+	SAA_Role varchar(255) NOT NULL,
+    PRIMARY KEY (SAA_id)
+);
+
+
+-- insert data into User table --
+INSERT INTO Users (user_name,user_password, user_role)
+VALUES ('vader','vaderpw', 'admin');
+
+INSERT INTO Users (user_name,user_password, user_role)
+VALUES ('luke','lukepw', 'employee');
+
+INSERT INTO Users (user_name,user_password, user_role)
+VALUES ('leah','leahpw', 'employee');
+
+INSERT INTO Users (user_name,user_password, user_role)
+VALUES ('hansolo','hansolopw', 'employee');
+
+-- verify data is in the User table --
+SELECT * FROM Users;
