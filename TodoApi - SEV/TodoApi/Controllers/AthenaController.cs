@@ -104,6 +104,9 @@ namespace TodoApi.Controllers
 
 
 
+
+
+
         //[HttpGet("{range}", Name = "GetStu2")]
         //public ActionResult<string> GetRange(string requestType)
         //{
@@ -137,6 +140,7 @@ namespace TodoApi.Controllers
 
         //}
 
+        /*
         [HttpPost]
         public IActionResult Create(StuItem item)
         {
@@ -146,6 +150,49 @@ namespace TodoApi.Controllers
 
             return CreatedAtRoute("GetStu", new { id = item.stu_id }, item);
         }
+        */ 
+
+        /*
+        [HttpPost]
+        public IActionResult Create(Session_ExpectedAttendees rsvp)
+        {
+            AthenaDataLayer data = new AthenaDataLayer();
+
+            //The data is null here too, so the issue must be that the data is being lost during its sending from Postman***********************************************
+            System.Diagnostics.Debug.WriteLine(rsvp.ToString());
+
+            data.RSVP_Function(rsvp);
+
+            return CreatedAtRoute("GetSEA", new { id = rsvp.SEA_id }, rsvp);
+        }
+        */
+
+        // POST: api/Todo
+        [HttpPost]
+        public ActionResult<Session_ExpectedAttendees> PostTodoItem(Session_ExpectedAttendees rsvp)
+        {
+            AthenaDataLayer data = new AthenaDataLayer();
+
+            //The data is null here too, so the issue must be that the data is being lost during its sending from Postman***********************************************
+            System.Diagnostics.Debug.WriteLine(rsvp.ToString());
+
+            data.RSVP_Function(rsvp);
+            
+            return CreatedAtAction(nameof(GetSEA_ById), new { id = rsvp.SEA_id }, rsvp);
+        }
+
+
+        [HttpGet("sea/{id}", Name = "GetSEA")]
+        public ActionResult <List<Session_ExpectedAttendees>> GetSEA_ById(string id)
+        {
+                AthenaDataLayer data = new AthenaDataLayer();
+
+                return data.find_SessionsRSVPDfor_byId(id);
+        }
+        
+
+
+
 
 
         [HttpDelete("{id}")]

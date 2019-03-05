@@ -9,7 +9,7 @@ using Dapper;
 
 namespace TodoApi.Models
 {
-    public class TheEvent
+    public class Employee
     {
         public int TE_id { get; set; }
         public string TE_Name { get; set; }
@@ -18,15 +18,16 @@ namespace TodoApi.Models
         public TimeSpan TE_Time { get; set; }
         public string TE_Location { get; set; }
 
-            public override string ToString()
-            {
-                return "Id: " + TE_id + " " +
-                "Name: " + TE_Name + " " +
-                 "Start Date: " + TE_Start_Date.ToString() + " " +
-                  "End Date: " + TE_End_Date.ToString() + " " +
-                   "Time: " + TE_Time.ToString() + " " +
-                    "Location: " + TE_Location + " ";
-            }
-        
+        public override string ToString()
+        {
+            return "Id: " + TE_id + " " +
+            "Name: " + TE_Name + " " +
+             "Start Date: " + TE_Start_Date.ToString() + " " +
+              "End Date: " + TE_End_Date.ToString() + " " +
+               "Time: " + TE_Time.ToString() + " " +
+                "Location: " + TE_Location + " ";
+        }
+
     }
 }
+

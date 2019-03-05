@@ -18,7 +18,7 @@ namespace TodoApi.Models
 {
     public class AthenaDataLayer
     {
-        string DBpath = "Server=localhost; Database=lit_db; UID=root; Password=Lisabella1.";
+        string DBpath = "Server=localhost; Database=lit_db; UID=keawebridges; Password=keawebridges";
 
         //check if File exists
         public bool fileExists(string path)
@@ -73,6 +73,15 @@ namespace TodoApi.Models
 
             return student_List;
         }
+
+
+
+
+
+
+
+
+        /*
         //write File
         public void fileWrite(StuItem student)
         {
@@ -85,6 +94,62 @@ namespace TodoApi.Models
                         STU_GPA = student.stu_gpa});
             }
         }
+        */
+
+        //write File
+        public void RSVP_Function(Session_ExpectedAttendees s)
+        {
+            System.Diagnostics.Debug.WriteLine(s.ToString());
+
+            string sql = "INSERT INTO Session_ExpectedAttendees (SEA_User_id, SEA_First_Name, SEA_Last_Name, " +
+                "SEA_Role, TE_id, TE_Name, ES_id, ES_Name) " +
+                "Values (@SEA_User_id, @SEA_First_Name, @SEA_Last_Name, " +
+                "@SEA_Role, @TE_id, @TE_Name, @ES_id, @ES_Name);";
+
+            using (var connection = new MySqlConnection(DBpath))
+            {
+                var affectedRows = connection.Execute(sql, new
+                {
+                    /*
+                    SEA_User_id = s.SEA_User_id,
+                    SEA_First_Name = s.SEA_First_Name,
+                    SEA_Last_Name = s.SEA_Last_Name,
+                    SEA_Role = s.SEA_Role,
+                    TE_id = s.TE_id,
+                    TE_Name = s.TE_Name,
+                    ES_id = s.ES_id,
+                    ES_Name = s.ES_Name
+                    */
+
+                    /*
+                    s.SEA_User_id, s.SEA_First_Name, s.SEA_Last_Name, s.SEA_Role,
+                    s.TE_id, s.TE_Name, s.ES_id, s.ES_Name
+                    */
+
+                });
+            }
+        }
+        public List<Session_ExpectedAttendees> find_SessionsRSVPDfor_byId(string id)
+        {
+            List<Session_ExpectedAttendees> SEA_List = new List<Session_ExpectedAttendees>();
+
+            string sql = "SELECT * FROM Session_ExpectedAttendees WHERE SEA_User_id = @ID;";
+
+            using (MySqlConnection connection = new MySqlConnection(DBpath))
+            {
+                SEA_List = connection.Query<Session_ExpectedAttendees>(sql, new { ID = id }).ToList();
+            }
+
+            return SEA_List;
+        }
+
+
+
+
+
+
+
+
 
         public StuItem findId(string id)
         {
