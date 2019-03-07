@@ -16,8 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace TodoApi.Controllers
 {
     [Route("api/[controller]")]
-   // [ApiController]
-    [EnableCors("AllowAllOrigins")]
+    [ApiController] // ***uncommented to meet Dapper assignment format***
+    //[EnableCors("AllowAllOrigins")] ***commented to meet Dapper assignment format***
     public class AthenaController : ControllerBase
     {
         private readonly TodoContext _context;
@@ -37,20 +37,6 @@ namespace TodoApi.Controllers
 
 
 
-
-
-
-
-        /*
-        [HttpGet]
-        public ActionResult<List<StuItem>> GetAll()
-        {
-            StuDataLayer data = new StuDataLayer();
-
-            return data.fileRead();
-
-        }
-        */
         [HttpGet("events")]
         public ActionResult<List<TheEvent>> GetAllEvents()
         {
@@ -59,6 +45,10 @@ namespace TodoApi.Controllers
             return data.getEvents();
 
         }
+
+
+
+
 
 
 
@@ -169,21 +159,20 @@ namespace TodoApi.Controllers
 
         // POST: api/Todo
         [HttpPost]
-        public ActionResult<Session_ExpectedAttendees> PostTodoItem(Session_ExpectedAttendees rsvp)
+        public ActionResult<Rsvp> Create(Rsvp r)
         {
             AthenaDataLayer data = new AthenaDataLayer();
-
-            //The data is null here too, so the issue must be that the data is being lost during its sending from Postman***********************************************
-            System.Diagnostics.Debug.WriteLine(rsvp.ToString());
-
-            data.RSVP_Function(rsvp);
             
-            return CreatedAtAction(nameof(GetSEA_ById), new { id = rsvp.SEA_id }, rsvp);
+            System.Diagnostics.Debug.WriteLine(r.ToString());
+
+            data.RSVP_Function(r);
+            
+            return CreatedAtAction(nameof(GetRSVPS_ById), new { id = r.R_id }, r);
         }
 
 
-        [HttpGet("sea/{id}", Name = "GetSEA")]
-        public ActionResult <List<Session_ExpectedAttendees>> GetSEA_ById(string id)
+        [HttpGet("rsvps/{id}", Name = "GetRSVPS")]
+        public ActionResult <List<TheSession>> GetRSVPS_ById(string id)
         {
                 AthenaDataLayer data = new AthenaDataLayer();
 

@@ -17,8 +17,9 @@ namespace TodoApi.Models
         public DateTime TE_End_Date { get; set; }
         public TimeSpan TE_Time { get; set; }
         public string TE_Location { get; set; }
+        public List<TheSession> TE_SessionsList { get; set; }
 
-            public override string ToString()
+        public override string ToString()
             {
                 return "Id: " + TE_id + " " +
                 "Name: " + TE_Name + " " +

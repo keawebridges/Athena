@@ -11,22 +11,11 @@ namespace TodoApi.Models
 {
     public class Employee
     {
-        public int TE_id { get; set; }
-        public string TE_Name { get; set; }
-        public DateTime TE_Start_Date { get; set; }
-        public DateTime TE_End_Date { get; set; }
-        public TimeSpan TE_Time { get; set; }
-        public string TE_Location { get; set; }
-
-        public override string ToString()
-        {
-            return "Id: " + TE_id + " " +
-            "Name: " + TE_Name + " " +
-             "Start Date: " + TE_Start_Date.ToString() + " " +
-              "End Date: " + TE_End_Date.ToString() + " " +
-               "Time: " + TE_Time.ToString() + " " +
-                "Location: " + TE_Location + " ";
-        }
+       public int E_id { get; set; }
+       public string E_First_Name { get; set; }
+       public string E_Last_Name { get; set; }
+       public string E_User_Name { get; set; }
+       public string E_Pass_Word { get; set; }
 
     }
 }
